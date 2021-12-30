@@ -1,3 +1,4 @@
+package model;
 public class ReservationStation {
     public String type; //add nd sub or mult nd divide (general type)
     public boolean busy;
@@ -6,7 +7,6 @@ public class ReservationStation {
     public long Vk;
     public String Qj;
     public String Qk;
-    public long address;
     public long result;
 
 
@@ -17,7 +17,6 @@ public class ReservationStation {
         operation = null;
         Vj =0;
         Vk =0;
-        address = 0;
         Qj = null;
         Qk = null;
 
@@ -28,7 +27,6 @@ public class ReservationStation {
         operation = null;
         Vj = 0;
         Vk =0;
-        address = 0;
         Qj =null;
         Qk = null;
 

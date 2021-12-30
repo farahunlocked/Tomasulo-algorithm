@@ -1,3 +1,4 @@
+package model;
 public class CDB {
     private long cdbRes;
     private String cdbSrc;

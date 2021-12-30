@@ -1,9 +1,10 @@
+package model;
 import java.util.ArrayList;
 
-public class InstructionSet {
+public class InstructionTable {
     private static ArrayList<String> instructions;
 
-    public InstructionSet(ArrayList<String> input){
+    public InstructionTable(ArrayList<String> input){
         instructions=input;
     }
 
