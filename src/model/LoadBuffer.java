@@ -1,3 +1,4 @@
+package model;
 public class LoadBuffer {
     public long address;
     public boolean busy;

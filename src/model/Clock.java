@@ -1,3 +1,4 @@
+package model;
 public class Clock {
     int cycleTime;
     static Clock currentClock = null;

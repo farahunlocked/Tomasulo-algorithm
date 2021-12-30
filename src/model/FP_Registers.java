@@ -1,3 +1,4 @@
+package model;
 public class FP_Registers {
     private static double[] FP_Registers ; // indexed by register number and contains reg value
     public static String[] Qi; // reservation station that the register is waiting for
