@@ -1,13 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="2be44eea-147a-48cf-bc5f-41ba4ac70561" name="Default Changelist" comment="merge">
-      <change afterPath="$PROJECT_DIR$/../Tomasulo algorithm/src/FP_Registers.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Tomasulo algorithm/src/GP_Registers.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Tomasulo algorithm/src/InstructionSet.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Tomasulo algorithm/src/LoadBuffer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Tomasulo algorithm/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../Tomasulo algorithm/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Tomasulo algorithm/src/CDB.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Tomasulo algorithm/src/CDB.java" afterDir="false" />
+    <list default="true" id="2be44eea-147a-48cf-bc5f-41ba4ac70561" name="Default Changelist" comment="added register, InstructionSet, load buffer classes">
+      <change afterPath="$PROJECT_DIR$/src/Station.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/InstructionSet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/InstructionSet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ReservationStation.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ReservationStation.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -22,7 +20,7 @@
     </option>
   </component>
   <component name="Git.Settings">
-    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../Tomasulo algorithm" />
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="ProjectId" id="22uQ30lbzas208JdP45mA1cCdZW" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
@@ -33,7 +31,7 @@
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../Tomasulo algorithm" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
@@ -51,7 +49,14 @@
       <option name="project" value="LOCAL" />
       <updated>1640786092216</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="added register, InstructionSet, load buffer classes">
+      <created>1640901524466</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1640901524466</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -68,6 +73,7 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="clock, CDB classes created" />
-    <option name="LAST_COMMIT_MESSAGE" value="clock, CDB classes created" />
+    <MESSAGE value="added register, InstructionSet, load buffer classes" />
+    <option name="LAST_COMMIT_MESSAGE" value="added register, InstructionSet, load buffer classes" />
   </component>
 </project>
