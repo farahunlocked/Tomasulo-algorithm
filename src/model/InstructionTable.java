@@ -3,45 +3,28 @@ package model;
 import java.util.Arrays;
 
 public class InstructionTable {
-    private String[][] instructions;
+    private Instruction[] instructions;
 
-    public InstructionTable(String[][] input){
+    public InstructionTable(String[] input){
         
     	//finding the maximum length of the split instruction array ie. ["LD", "F2", "300"]
-    	int maxLength = 3;
-    	for(String[] line: input) {
-    		if(line.length==4);
-    		maxLength = 4;
-    		break;
-    	}
     	
-    	instructions = new String[input.length][maxLength+4];
+    	
+    	instructions = new Instruction[input.length];
     	
     	//initializing the instructions 2d array
     	for(int i = 0;i<input.length;i++) {
     		
-    		for(int j = 0;j<3;j++) {
-    			instructions[i][j] = input[i][j];
-    		}
-    		if(input[i].length>3) {
-    			instructions[i][3] = input[i][3];
-    		}
-    		else
-    			instructions[i][3] = "";
-    		for(int j = 4; j<maxLength+4;j++) {
-    			instructions[i][j] = "";
-    		}
+    		instructions[i] = new Instruction(input[i]);
     	}
     	
     }
-    
-    public void printContent() {
-    	
-    }
 
-    public static void printContent()
+    public void printContent()
     {
-        System.out.println("Instruction Table");
+    	for(Instruction ins: instructions) {
+    		ins.printContent();
+    	}
 
 
     }

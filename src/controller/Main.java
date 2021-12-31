@@ -19,21 +19,10 @@ public class Main implements ActionListener{
 	
 	public void init() {
 		
-		/*Getting the code and putting it in format: 	[
-		 * 													["LD", "F3", "100"],
-		 * 													["ADD", "F2", "F4", "F5"]
-		 * 												]
-		 */
+		//Getting the code and 
 		String code = gui.getCodeText();
-		
 		String[] codeLines = code.split("\n");
-		String codeArr[][] = new String[codeLines.length][];
-		
-		for(int i = 0;i<codeLines.length;i++) {
-			codeArr[i] = codeLines[i].split(" ");
-		}
-		
-		instructionTable = new InstructionTable(codeArr);
+		instructionTable = new InstructionTable(codeLines);
 		instructionTable.printContent();
 	}
 	
@@ -42,12 +31,6 @@ public class Main implements ActionListener{
 		Main controller = new Main();
 		
 	}
-	
-	
-	
-	
-	
-	
 	
 	@Override
 	public void actionPerformed(ActionEvent e) {	//when user submits all the info
