@@ -39,5 +39,10 @@ public class InstructionTable {
     	
     }
 
+    public static void printContent()
+    {
+        System.out.println("Instruction Table");
 
+
+    }
 }
