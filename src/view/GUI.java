@@ -1,11 +1,5 @@
 package view;
-import java.awt.Rectangle;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
-
 import javax.swing.*;
-
-import controller.Main;
 
 public class GUI{
 	
@@ -16,8 +10,31 @@ public class GUI{
 	private JTextArea codeText;
 	private JButton simulateButton;
 	
+	public String getAddLatency() {
+		return addLatency.getText();
+	}
+
+	public String getSubLatency() {
+		return subLatency.getText();
+	}
+
+	public String getMulLatency() {
+		return mulLatency.getText();
+	}
+
+	public String getDivLatency() {
+		return divLatency.getText();
+	}
+
+	public String getCodeText() {
+		return codeText.getText();
+	}
+
+	public JButton getSimulateButton() {
+		return simulateButton;
+	}
+
 	public GUI() {
-		Rectangle sizeRec = new Rectangle(30, 30, 150, 20);
 		JFrame frame = new JFrame("Tomasulo");
 		
 		JLabel addLabel = new JLabel("Addition Latency:");
@@ -69,10 +86,6 @@ public class GUI{
 		frame.setSize(500, 500);
 		frame.setLayout(null);
 		frame.setVisible(true);
-	}
-	
-	public void bindButton(Main listener) {
-		simulateButton.addActionListener(listener);
 	}
 	
 	public static void main(String []args) {
