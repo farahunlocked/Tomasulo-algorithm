@@ -36,7 +36,7 @@ public class InstructionTable {
     }
     
     public void printContent() {
-    	System.out.println(Arrays.deepToString(instructions));
+    	
     }
 
 
