@@ -1,7 +1,7 @@
 package model;
 
 
-public class StoreBuffer {
+public class StoreBuffer implements BusListener{
 
     static StoreStation[] storeSlots ;
 
@@ -9,6 +9,8 @@ public class StoreBuffer {
 
     private StoreBuffer(int size){
         storeSlots= new StoreStation[size];
+        
+        CDB.getInstance().addListener(this);	// making this object listen to the common data bus
     }
 
 

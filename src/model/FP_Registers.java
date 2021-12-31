@@ -1,5 +1,5 @@
 package model;
-public class FP_Registers {
+public class FP_Registers implements BusListener{
     private static double[] FP_Registers ; // indexed by register number and contains reg value
     public static String[] Qi; // reservation station that the register is waiting for
 
@@ -11,6 +11,8 @@ public class FP_Registers {
         for(int i=0 ; i<32 ;i++){
             FP_Registers[i]=i*10;
         }
+        
+        CDB.getInstance().addListener(this);	// making this object listen to the common data bus
 
     }
     // --------------------------------------------------setters
