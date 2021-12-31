@@ -8,5 +8,10 @@ public class InstructionTable {
         instructions=input;
     }
 
+    public static void printContent()
+    {
+        System.out.println("Instruction Table");
 
+
+    }
 }

@@ -1,14 +1,40 @@
 package model;
+
 public class LoadBuffer {
-    public long address;
-    public boolean busy;
+
+     static LoadStation[] loadSlots;
 
 
 
+    private LoadBuffer (int size)
+    {
 
-    public void removeLoad(){
-        busy=false;
-        address=0;
-
+        loadSlots =new LoadStation[size];
     }
+
+
+
+    public static void printContent()
+    {
+        System.out.println("Load Buffer");
+
+
+
+        for(int i=0; i<loadSlots.length; i++)
+        {
+            LoadStation slot = loadSlots[i];
+
+            boolean busy = slot.isBusy();
+            String address = slot.getAddress() + "";
+            if(!busy)
+                address = "---";
+
+            System.out.println("Tag: " + slot.getTag() + '\t' + "Busy: " + slot.isBusy() + '\t' + "Address: " + address);
+        }
+
+        System.out.println('\n');
+    }
+
+
 }
+
