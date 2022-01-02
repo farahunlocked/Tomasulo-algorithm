@@ -9,7 +9,7 @@ public class Instruction {
 	private int start;
 	private int finish;
 	private int write;
-	
+
 	public String getIns() {
 		return ins;
 	}
@@ -59,17 +59,16 @@ public class Instruction {
 	}
 
 	public Instruction(String line) {
-		String [] lineArr = line.split(" ");
-		
+		String[] lineArr = line.split(" ");
+
 		ins = lineArr[0];
 		reg1 = Integer.parseInt(lineArr[1], 1, lineArr[1].length(), 10);
-		
-		//Checking if the instruction is one of [ADD, SUB, MUL, DIV]
-		if(lineArr.length==4) {	
+
+		// Checking if the instruction is one of [ADD, SUB, MUL, DIV]
+		if (lineArr.length == 4) {
 			reg2 = Integer.parseInt(lineArr[2], 1, lineArr[2].length(), 10);
 			reg3 = Integer.parseInt(lineArr[3], 1, lineArr[3].length(), 10);
-		}
-		else {
+		} else {
 			reg2 = Integer.parseInt(lineArr[2]);
 			reg3 = -1;
 		}
@@ -77,22 +76,21 @@ public class Instruction {
 		start = -1;
 		finish = -1;
 		write = -1;
-	
+
 	}
-	
+
 	public void printContent() {
-		
-		String sIssue = issue<0?"":""+issue;
-		String sStart = start<0?"":""+start;
-		String sFinish = finish<0?"":""+finish;
-		String sWrite = write<0?"":""+write;
-		
-		System.out.print("Instruction: "+ ins);
-		System.out.print(" | Reg1: F"+reg1);
-		if(reg3<0) {
-			System.out.print(" | Address: "+ reg2);
-		}
-		else {
+
+		String sIssue = issue < 0 ? "" : "" + issue;
+		String sStart = start < 0 ? "" : "" + start;
+		String sFinish = finish < 0 ? "" : "" + finish;
+		String sWrite = write < 0 ? "" : "" + write;
+
+		System.out.print("Instruction: " + ins);
+		System.out.print(" | Reg1: F" + reg1);
+		if (reg3 < 0) {
+			System.out.print(" | Address: " + reg2);
+		} else {
 			System.out.print(" | Reg2: F" + reg2);
 			System.out.print(" | Reg3: F" + reg3);
 		}
@@ -101,8 +99,7 @@ public class Instruction {
 		System.out.print(" | Finish: " + sFinish);
 		System.out.print(" | Write: " + sWrite);
 		System.out.println();
-		
+
 	}
-	
-	
+
 }

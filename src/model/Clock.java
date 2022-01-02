@@ -1,27 +1,24 @@
 package model;
+
 public class Clock {
-    int cycleTime;
-    static Clock currentClock = null;
+	int cycleTime;
+	static Clock currentClock = null;
 
+	private Clock() {
+		cycleTime = 0;
+	}
 
-    private Clock(){
-        cycleTime = 0;
-    }
+	static Clock getInstance() {
+		if (currentClock == null)
+			currentClock = new Clock();
+		return currentClock;
+	}
 
+	int getCycleTime() {
+		return cycleTime;
+	}
 
-    static Clock getInstance(){
-        if (currentClock == null)
-            currentClock = new Clock();
-        return currentClock;
-    }
-
-
-    int getCycleTime(){
-        return cycleTime;
-    }
-
-
-    void incrementCycleTime(){
-        cycleTime++;
-    }
+	void incrementCycleTime() {
+		cycleTime++;
+	}
 }

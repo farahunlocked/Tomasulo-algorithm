@@ -1,53 +1,74 @@
 package model;
-public class FP_Registers implements BusListener{
-    private static double[] FP_Registers ; // indexed by register number and contains reg value
-    public static String[] Qi; // reservation station that the register is waiting for
 
-    // construct initializes size of arrays (we have 32 FP regs)
-    public FP_Registers(){
-        FP_Registers = new double[32];
-        Qi = new String[32];
+public class FP_Registers implements BusListener {
+	private double[] FP_Registers; // indexed by register number and contains reg value
+	private String[] Qi; // reservation station that the register is waiting for
+	private static FP_Registers regs;
 
-        for(int i=0 ; i<32 ;i++){
-            FP_Registers[i]=i*10;
-        }
-        
-        CDB.getInstance().addListener(this);	// making this object listen to the common data bus
+	// construct initializes size of arrays (we have 32 FP regs)
+	private FP_Registers() {
+		FP_Registers = new double[32];
+		Qi = new String[32];
 
-    }
-    // --------------------------------------------------setters
+		for (int i = 0; i < 32; i++) {
+			FP_Registers[i] = i * 10;
+		}
 
-    public void setRegister(int regNum, long value){
+		CDB.getInstance().addListener(this); // making this object listen to the common data bus
 
-        FP_Registers[regNum] = value;
-    }
+	}
 
-    public void setQi(String stationName, int regNum){
-        Qi[regNum] = stationName;
-    }
+	public static FP_Registers getInstance() {
 
-    //---------------------------------------------------------getters
-    public double getReg(int regNum){
+		if (regs == null) {
+			regs = new FP_Registers();
+		}
+		return regs;
+	}
+	// --------------------------------------------------setters
 
-        return FP_Registers[regNum];
-    }
+	public void setRegister(int regNum, double value) {
 
-    public String getQi(int regNum){
-        return Qi[regNum];
-    }
+		FP_Registers[regNum] = value;
+	}
 
+	public void setQi(String stationName, int regNum) {
+		Qi[regNum] = stationName;
+	}
 
-    public static void printContent(){
+	public void clearQi(int regNum) {
+		Qi[regNum] = null;
+	}
 
-    System.out.println("Floating Point Registers");
+	// ---------------------------------------------------------getters
+	public double getReg(int regNum) {
 
+		return FP_Registers[regNum];
+	}
 
+	public String getQi(int regNum) {
+		return Qi[regNum];
+	}
 
-        for(int i=0; i<32; i++)
-    {
-        System.out.println("F" + i + " : " + FP_Registers[i] + '\t' + "Qi: " + Qi[i]);
-    }
+	public void printContent() {
 
-        System.out.println('\n');
-    }
+		System.out.println("Floating Point Registers");
+
+		for (int i = 0; i < 32; i++) {
+			System.out.println("F" + i + " : " + FP_Registers[i] + '\t' + "Qi: " + Qi[i]);
+		}
+
+		System.out.println('\n');
+	}
+
+	@Override
+	public void onBusWrite(double result, String tag) {
+		for(int i = 0;i<Qi.length;i++) {
+			String qi = Qi[i];
+			if(qi == tag) {
+				Qi[i] = null;
+				FP_Registers[i] = result;
+			}
+		}
+	}
 }

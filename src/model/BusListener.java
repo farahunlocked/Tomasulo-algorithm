@@ -1,5 +1,5 @@
 package model;
 
 public interface BusListener {
-	public void onBusWrite(long result, String tag);
+	public void onBusWrite(double result, String tag);
 }
