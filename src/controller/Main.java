@@ -188,6 +188,7 @@ public class Main implements ActionListener {
 	@Override
 	public void actionPerformed(ActionEvent e) { // when user submits all the info
 		try {
+			cycle = 1;
 			init();
 		} catch (Exception e1) {
 			e1.printStackTrace();

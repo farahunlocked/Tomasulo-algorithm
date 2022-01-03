@@ -106,7 +106,7 @@ public class StoreBuffer implements BusListener {
 				vj = "---";
 				qj = "---";
 				address = "---";
-			} else if (!qj.equals("0"))
+			} else if (qj != null)
 				vj = "---";
 
 			System.out.println("Tag: " + slot.getTag() + '\t' + "Busy: " + busy + '\t' + "Vj: " + vj + '\t' + "Qj: "
